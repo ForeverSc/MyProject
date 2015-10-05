@@ -1,0 +1,103 @@
+﻿<UserControl x:Class="Project0._1.ViewComponents.UserControl_QuickToolBar"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             Background="LightGray"
+             BorderThickness="0"
+             DataContext="{Binding MenuView, Source={StaticResource Locator}}"
+            >
+    
+    <UserControl.Resources>
+        <Style x:Key="toolButton" TargetType="Button" >
+            <Setter Property="Width" Value="60"></Setter>
+            <Setter Property="Background" Value="LightGray"></Setter>
+            <Setter Property="BorderThickness" Value="0"></Setter>
+           <!--Background 和Foreground 是用来显示正常情况下的值，在IsPressed等情况下设置是没有意义的，所以要使用Template来实现-->
+            <Style.Triggers>
+                <Trigger Property="IsPressed" Value="true">
+               
+                              
+                    
+                    
+                </Trigger>
+                    
+                    
+           
+                
+            </Style.Triggers>
+            
+        </Style>
+
+        <Style x:Key="imageInButton" TargetType="Image">
+            
+        </Style>
+
+    </UserControl.Resources>
+    
+    
+    <Grid Margin="0,0,-83,0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            
+        </Grid.ColumnDefinitions>
+        <Button x:Name="addNewFileButton" Grid.Column="0" Style="{StaticResource ResourceKey=toolButton }" >
+            <Image Source="/Icons/QuickStartIcons/addNewFile.png"  Style="{StaticResource imageInButton}"></Image>
+        </Button>
+
+        <Button x:Name="saveFileButton" Grid.Column="1" 
+                Style="{StaticResource ResourceKey=toolButton }"  
+                Command="{Binding SaveCommand}">
+            <Image Source="/Icons/QuickStartIcons/saveFile.png" Style="{StaticResource imageInButton}"></Image>
+        </Button>
+        
+        <Button x:Name="revokeButton" Grid.Column="2" Style="{StaticResource ResourceKey=toolButton }"
+                DataContext="{Binding NewSettingsView, Source={StaticResource Locator}}"
+                Command="{Binding RevokeCommand}">
+            <Image Source="/Icons/QuickStartIcons/revokeButton.png" Style="{StaticResource imageInButton}" ></Image>
+        </Button>
+        
+        <Button x:Name="startButton" Grid.Column="3" Style="{StaticResource toolButton}" 
+                DataContext="{Binding NewSettingsView, Source={StaticResource Locator}}"
+                Command="{Binding RunCommand}">
+            <Image Source="/Icons/QuickStartIcons/startButton.png" Style="{StaticResource imageInButton}"></Image>
+        </Button>
+
+        <Button x:Name="stopButton" Grid.Column="4" Style="{StaticResource toolButton}">
+            <Image Source="/Icons/QuickStartIcons/stopButton.png" Style="{StaticResource imageInButton}"></Image>
+        </Button>
+        
+        <Button x:Name="settingButton" Grid.Column="5" Style="{StaticResource toolButton}">
+            <Image Source="/Icons/QuickStartIcons/settingButton.png" Style="{StaticResource imageInButton}"></Image>
+        </Button>
+        
+        <Button x:Name="HelpInformationButton" Grid.Column="6" Style="{StaticResource ResourceKey=toolButton }">
+            <Image Source="/Icons/QuickStartIcons/helpInformation.png" Style="{StaticResource imageInButton}" ></Image>
+        </Button>
+        
+        <Button x:Name="addNewUser" Grid.Column="7" Style="{StaticResource toolButton}">
+            <Image Source="/Icons/QuickStartIcons/addNewUser.png" Style="{StaticResource imageInButton}"></Image>
+        </Button>
+
+        <Button x:Name="alterUserInformation" Grid.Column="8" Style="{StaticResource toolButton}">
+            <Image Source="/Icons/QuickStartIcons/alterUserInformation.png" Style="{StaticResource imageInButton}"></Image>
+        </Button>
+
+        <Button x:Name="userInformation" Grid.Column="9" Style="{StaticResource toolButton}">
+            <Image Source="/Icons/QuickStartIcons/userInformation.png" Style="{StaticResource imageInButton}"></Image>
+        </Button>
+
+
+
+
+
+    </Grid>
+</UserControl>

@@ -1,0 +1,237 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1A41E295-D24D-4533-8E86-EA3C4CF5531A}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Project0._1</RootNamespace>
+    <AssemblyName>Project0.1</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="GalaSoft.MvvmLight">
+      <HintPath>..\packages\MvvmLightLibs.5.0.2.0\lib\net45\GalaSoft.MvvmLight.dll</HintPath>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight.Extras">
+      <HintPath>..\packages\MvvmLightLibs.5.0.2.0\lib\net45\GalaSoft.MvvmLight.Extras.dll</HintPath>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight.Platform">
+      <HintPath>..\packages\MvvmLightLibs.5.0.2.0\lib\net45\GalaSoft.MvvmLight.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation">
+      <HintPath>..\packages\CommonServiceLocator.1.3\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmLightLibs.5.0.2.0\lib\net45\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Design\DesignDataService.cs" />
+    <Compile Include="Model\DataItem.cs" />
+    <Compile Include="Model\DataService.cs" />
+    <Compile Include="Model\IDataService.cs" />
+    <Compile Include="Model\main.cs" />
+    <Compile Include="Model\MyRectangle.cs" />
+    <Compile Include="Model\Switch.cs" />
+    <Compile Include="Model\TransportBean.cs" />
+    <Compile Include="NewSettingsWindow.xaml.cs">
+      <DependentUpon>NewSettingsWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewComponents\MyRectangle.xaml.cs">
+      <DependentUpon>MyRectangle.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewComponents\UserControl_MenuBar.xaml.cs">
+      <DependentUpon>UserControl_MenuBar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewComponents\UserControl_QuickToolBar.xaml.cs">
+      <DependentUpon>UserControl_QuickToolBar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModel\MainViewModel.cs" />
+    <Compile Include="ViewModel\MenuViewModel.cs" />
+    <Compile Include="ViewModel\NewSettingsViewModel.cs" />
+    <Compile Include="ViewModel\ViewModelLocator.cs" />
+    <Compile Include="Views\SettingPortsWindow.xaml.cs">
+      <DependentUpon>SettingPortsWindow.xaml</DependentUpon>
+    </Compile>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="NewSettingsWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Skins\MainSkin.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ViewComponents\MyRectangle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ViewComponents\UserControl_MenuBar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ViewComponents\UserControl_QuickToolBar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SettingPortsWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Icons\QuickStartIcons\alterUserInformation.png" />
+    <Resource Include="Icons\OtherIcons\1101193.png" />
+    <Resource Include="Icons\QuickStartIcons\addNewFile.png" />
+    <Resource Include="Icons\OtherIcons\1101195.png" />
+    <Resource Include="Icons\OtherIcons\1101198.png" />
+    <Resource Include="Icons\QuickStartIcons\addNewUser.png" />
+    <Resource Include="Icons\OtherIcons\1101229.png" />
+    <Resource Include="Icons\OtherIcons\1101338.png" />
+    <Resource Include="Icons\OtherIcons\1101340.png" />
+    <Resource Include="Icons\OtherIcons\1101374.png" />
+    <Resource Include="Icons\QuickStartIcons\copyButton.png" />
+    <Resource Include="Icons\OtherIcons\1101408.png" />
+    <Resource Include="Icons\OtherIcons\1101480.png" />
+    <Resource Include="Icons\OtherIcons\1101486.png" />
+    <Resource Include="Icons\QuickStartIcons\notificationButton.png" />
+    <Resource Include="Icons\OtherIcons\1101507.png" />
+    <Resource Include="Icons\QuickStartIcons\openFile.png" />
+    <Resource Include="Icons\OtherIcons\1101539.png" />
+    <Resource Include="Icons\OtherIcons\1101563.png" />
+    <Resource Include="Icons\OtherIcons\1101581.png" />
+    <Resource Include="Icons\QuickStartIcons\userInformation.png" />
+    <Resource Include="Icons\OtherIcons\1101629.png" />
+    <Resource Include="Icons\OtherIcons\1101633.png" />
+    <Resource Include="Icons\QuickStartIcons\helpInformation.png" />
+    <Resource Include="Icons\OtherIcons\1101636.png" />
+    <Resource Include="Icons\OtherIcons\1101645.png" />
+    <Resource Include="Icons\OtherIcons\1101671.png" />
+    <Resource Include="Icons\OtherIcons\1101676.png" />
+    <Resource Include="Icons\OtherIcons\1101691.png" />
+    <Resource Include="Icons\OtherIcons\1101692.png" />
+    <Resource Include="Icons\OtherIcons\1101696.png" />
+    <Resource Include="Icons\OtherIcons\1101704.png" />
+    <Resource Include="Icons\OtherIcons\1101722.png" />
+    <Resource Include="Icons\OtherIcons\1101728.png" />
+    <Resource Include="Icons\OtherIcons\1101739.png" />
+    <Resource Include="Icons\OtherIcons\1101757.png" />
+    <Resource Include="Icons\QuickStartIcons\deleteButton.png" />
+    <Resource Include="Icons\OtherIcons\1101799.png" />
+    <Resource Include="Icons\QuickStartIcons\stopButton.png" />
+    <Resource Include="Icons\QuickStartIcons\startButton.png" />
+    <Resource Include="Icons\OtherIcons\1101864.png" />
+    <Resource Include="Icons\OtherIcons\1101888.png" />
+    <Resource Include="Icons\QuickStartIcons\settingButton.png" />
+    <Resource Include="Icons\QuickStartIcons\revokeButton.png" />
+    <Resource Include="Icons\OtherIcons\1102149.png" />
+    <Resource Include="Icons\OtherIcons\1102230.png" />
+    <Resource Include="Icons\OtherIcons\1102231.png" />
+    <Resource Include="Icons\QuickStartIcons\saveFile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\OtherIcons\1190716.png" />
+    <Resource Include="Icons\OtherIcons\1190717.png" />
+    <Resource Include="Icons\OtherIcons\1190718.png" />
+    <Resource Include="Icons\OtherIcons\1190719.png" />
+    <Resource Include="Icons\OtherIcons\1190720.png" />
+    <Resource Include="Icons\OtherIcons\1190723.png" />
+    <Resource Include="Icons\OtherIcons\1190728.png" />
+    <Resource Include="Icons\OtherIcons\1190729.png" />
+    <Resource Include="Icons\OtherIcons\1190731.png" />
+    <Resource Include="Icons\OtherIcons\1190734.png" />
+    <Resource Include="Icons\OtherIcons\AddNewFileButton.png" />
+    <Resource Include="Icons\OtherIcons\NewInformationButton.png" />
+    <Resource Include="Icons\OtherIcons\QuickSaveButton.ico" />
+    <Resource Include="Icons\OtherIcons\SetUpButton.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

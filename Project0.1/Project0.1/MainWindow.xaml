@@ -1,0 +1,86 @@
+﻿<Window x:Class="Project0._1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"      
+        xmlns:ignore="http://www.ignore.com"       
+        xmlns:prop="clr-namespace:Project0._1.Properties"
+         xmlns:vc="clr-namespace:Project0._1.ViewComponents" 
+        Height="768"
+        Width="1366"
+        WindowState="Maximized"
+        Background="LightGray"
+        
+        
+        DataContext="{Binding Main, Source={StaticResource Locator}}">
+    <Window.Resources>
+
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Skins/MainSkin.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    
+    <Grid Margin="10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="520*"/>
+            <ColumnDefinition Width="138*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20*"/>
+            <RowDefinition Height="20*"/>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="420*"/>     
+            <RowDefinition Height="181*"/>
+        </Grid.RowDefinitions>
+
+        <vc:UserControl_MenuBar Grid.Row="0" Grid.ColumnSpan="3"></vc:UserControl_MenuBar>
+        <vc:UserControl_QuickToolBar Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Left" ></vc:UserControl_QuickToolBar>
+        <Border x:Name="border1" Grid.Row="3" Style="{StaticResource border}" 
+                DataContext="{Binding MenuView, Source={StaticResource Locator}}">
+            <TabControl x:Name="tablControl" Grid.Row="2"  Grid.RowSpan="3">
+                <TabItem x:Name="tabitem1" Header="{Binding NewFileName}"      >
+                    <!--注意Mode 和 UpdateSourceTrigger-->
+                    <Canvas x:Name="canvas">
+                                
+                        
+                    </Canvas>
+
+                </TabItem>
+                <TabItem Header="TabItem">
+                    <Grid Background="White"/>
+                </TabItem>
+            </TabControl>
+
+        </Border>
+        
+        
+        <Border Grid.Row="4" Style="{StaticResource border}">
+            <TabControl  >
+                <TabItem Header="TabItem">
+                    <Grid Background="#FFE5E5E5" />
+                </TabItem>
+                <TabItem Header="TabItem">
+                    <Grid Background="#FFE5E5E5"/>
+                </TabItem>
+            </TabControl>
+        </Border>
+        <Border  Grid.Column="1"  Grid.Row="0" Grid.RowSpan="5" Style="{StaticResource border}">
+            <TreeView   >
+
+            </TreeView>
+        </Border>
+        <!-- 分隔拖动-->
+        <GridSplitter Grid.Row="3" Background="Transparent" Height="6" HorizontalAlignment="Stretch" VerticalAlignment="Bottom"   />
+        <GridSplitter Grid.Row="0" Grid.RowSpan="5"  Width="6" Background="Transparent" />
+
+
+
+    </Grid>
+    
+ 
+    
+    
+    
+
+   
+</Window>

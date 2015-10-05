@@ -1,0 +1,13 @@
+﻿<Window x:Class="Project0._1.Views.SettingPortsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="SettingPortsWindow" Height="300" Width="300">
+
+    <GridView AllowsColumnReorder="True" ColumnHeaderToolTip="Authors">
+        <GridViewColumn Header="name"></GridViewColumn>
+        <GridViewColumn Header="age"></GridViewColumn>
+
+
+
+    </GridView>
+</Window>
